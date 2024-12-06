@@ -53,9 +53,10 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                                 context: context,
                                 builder: (context) => Dialog(
                                   child: Container(
-                                    padding: const EdgeInsets.all(12),
-                                    child: DoctorImage(image: doctor.image, fullName: doctor.fullName)
-                                  ),
+                                      padding: const EdgeInsets.all(12),
+                                      child: DoctorImage(
+                                          image: doctor.image,
+                                          fullName: doctor.fullName)),
                                 ),
                               );
                             },
@@ -65,10 +66,11 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                         const SizedBox(width: 16),
                         Expanded(
                             child: DrNameGenderAndAge(
-                                fullName: doctor.fullName,
-                                age: doctor.age,
-                                gender: doctor.gender,
-                                category: doctor.category)),
+                          fullName: doctor.fullName,
+                          age: doctor.age,
+                          gender: doctor.gender,
+                          category: doctor.category,
+                        )),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -87,6 +89,10 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                       Icons.payments_outlined,
                       'Consultation fee: ${doctor.consultationFee}',
                     ),
+                     _buildInfoRow(
+                      Icons.location_on_outlined,
+                      'Location: ${doctor.location}',
+                    ),
                     const SizedBox(height: 16),
                     Text(
                       'Medical Certificate',
@@ -100,7 +106,7 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                     DrCertificateImage(
                         certificateImage: doctor.certificateImage),
                     const SizedBox(height: 16),
-                    AcceptAndDecline(doctorEmail: doctor.email,)
+                    AcceptAndDecline()
                   ],
                 ),
               ),

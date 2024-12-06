@@ -69,7 +69,9 @@ class _ApprovedRequestPageState extends State<ApprovedRequestPage> {
                                 fullName: doctor.fullName,
                                 age: doctor.age,
                                 gender: doctor.gender,
-                                category: doctor.category)),
+                                category: doctor.category,
+                            
+                                )),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -101,7 +103,7 @@ class _ApprovedRequestPageState extends State<ApprovedRequestPage> {
                     DrCertificateImage(
                         certificateImage: doctor.certificateImage),
                     const SizedBox(height: 16),
-                    AcceptAndDecline(doctorEmail: doctor.email,)
+                    AcceptAndDecline()
                   ],
                 ),
               ),

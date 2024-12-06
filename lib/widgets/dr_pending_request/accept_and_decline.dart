@@ -1,11 +1,7 @@
-import 'package:cc_admin_side/functions/decline_dr.dart';
 import 'package:flutter/material.dart';
-import 'package:cc_admin_side/functions/accept_dr.dart';
 
 class AcceptAndDecline extends StatelessWidget {
-  final String doctorEmail;
-
-  const AcceptAndDecline({super.key, required this.doctorEmail});
+  const AcceptAndDecline({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +9,7 @@ class AcceptAndDecline extends StatelessWidget {
       children: [
         Expanded(
           child: ElevatedButton(
-            onPressed: () async {
-              await approveDoctor(doctorEmail);
-            },
+            onPressed: () {},
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.green[600],
             ),
@@ -28,9 +22,7 @@ class AcceptAndDecline extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(
           child: ElevatedButton(
-            onPressed: () async {
-              await declineDoctor(doctorEmail);
-            },
+            onPressed: () {},
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red[600],
             ),

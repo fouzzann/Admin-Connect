@@ -5,6 +5,7 @@ class DrNameGenderAndAge extends StatelessWidget {
   final String age;
   final String gender;
   final String category;
+
   
   const DrNameGenderAndAge({
     Key? key,
@@ -12,6 +13,7 @@ class DrNameGenderAndAge extends StatelessWidget {
     required this.age,
     required this.gender,
     required this.category,
+
   }) : super(key: key);
 
   @override
