@@ -1,3 +1,4 @@
+import 'package:cc_admin_side/auth/admin_login.dart';
 import 'package:cc_admin_side/firebase_options.dart';
 import 'package:cc_admin_side/view/pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  HomePage()
+      home:  AdminLogin()
     );
   }
 }

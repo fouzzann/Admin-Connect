@@ -1,5 +1,5 @@
 import 'package:cc_admin_side/controller/docter_controller.dart';
-import 'package:cc_admin_side/widgets/dr_pending_request/accept_and_decline.dart';
+import 'package:cc_admin_side/widgets/dr_pending_request/approve_and_decline.dart';
 import 'package:cc_admin_side/widgets/dr_pending_request/doctor_image.dart';
 import 'package:cc_admin_side/widgets/dr_pending_request/dr_certificate_image.dart';
 import 'package:cc_admin_side/widgets/dr_pending_request/dr_name_gender_and_age.dart';
@@ -24,9 +24,10 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
       itemBuilder: (context, index) {
         final doctor = doctorController.doctors[index];
         return Container(
+          
           margin: const EdgeInsets.only(bottom: 16),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.blue.withOpacity(0.2),
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
@@ -106,7 +107,7 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                     DrCertificateImage(
                         certificateImage: doctor.certificateImage),
                     const SizedBox(height: 16),
-                    AcceptAndDecline()
+                    ApproveAndDecline()
                   ],
                 ),
               ),

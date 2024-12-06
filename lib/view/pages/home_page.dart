@@ -1,4 +1,5 @@
-import 'package:cc_admin_side/view/pages/approved_request_page.dart';
+import 'package:cc_admin_side/auth/admin_login.dart';
+import 'package:cc_admin_side/view/pages/rejected_request.dart';
 import 'package:cc_admin_side/view/pages/pendings_docter_request.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +20,14 @@ class _HomePageState extends State<HomePage> {
       const PendingDoctorRequests()
     ),
     (
-      'Approved Requests',
+      'rejected Requests',
       Icons.check_circle_rounded,
-      const ApprovedRequestPage()
+      const RejectedRequest()
     ),
     (
       'Logout',
       Icons.logout_rounded,
-      const ApprovedRequestPage()
+      const AdminLogin()
     ),
   ];
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-      backgroundColor: colorScheme.background,
+      backgroundColor: const Color(0xFFF5F5F5),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(70),
         child: Container(
