@@ -87,6 +87,11 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                       Icons.payments_outlined,
                       'Consultation fee: ${doctor.consultationFee}',
                     ),
+                    _buildInfoRow(
+                      Icons.person_2,
+                      'Consultation fee: ${doctor.contact}',
+                    ),
+                     
                     const SizedBox(height: 16),
                     Text(
                       'Medical Certificate',

@@ -9,12 +9,12 @@ class DocterController extends GetxController {
   final FirebaseFirestore db = FirebaseFirestore.instance;
   List<Doctor> doctors = <Doctor>[].obs;
 
-  Future<void> fetchDocterPendingRequest() async {
+  Future<void> fetchDocterAcceptedRequest() async {
     try {
       isLoading.value = true;
       final QuerySnapshot querySnapshot = await db
           .collection('doctors')
-          .where('isAccepted', isEqualTo: false)
+          .where('isAccepted', isEqualTo: true)
           .get();
       final data = querySnapshot.docs;
       doctors.assignAll(data.map((doctor) {
@@ -32,5 +32,19 @@ class DocterController extends GetxController {
    }
   }
 
-  
+  Future<void> fetchDocterPendingRequest() async {
+    try {
+      isLoading.value = true;
+      final QuerySnapshot querySnapshot = await db
+          .collection('doctors')
+          .where('isAccepted', isEqualTo: false )
+          .get();
+      final data = querySnapshot.docs;
+      doctors.assignAll(data.map((doctor) {
+        return Doctor.fromMap(doctor.data() as Map<String, dynamic>);
+      }).toList());
+    } catch (e) {
+      log(e.toString());
+    }
+  }
 }

@@ -14,7 +14,7 @@ class Doctor {
   final String yearsOfExperience;
   final String certificateImage;
   final List<String> availableDays;
-
+  final String contact; 
   Doctor(
       {required this.image,
       required this.fullName,
@@ -30,7 +30,9 @@ class Doctor {
       required this.consultationFee,
       required this.yearsOfExperience,
       required this.certificateImage,
-      required this.availableDays});
+      required this.availableDays,
+      required this.contact, 
+      });
 
   Map<String, dynamic> toMap() {
     return {
@@ -48,12 +50,14 @@ class Doctor {
       'consultationFee': consultationFee,
       'yearsOfExperience': yearsOfExperience,
       'certificateImage': certificateImage,
-      "availableDays": availableDays
+      "availableDays": availableDays,
+      'contact': contact,
     };
   }
 
   factory Doctor.fromMap(Map<String, dynamic> map) {
     return Doctor(
+        contact: map['contact'] ?? 0,         
         image: map['image'] ?? '',
         fullName: map['fullName'] ?? '',
         age: map['age'] ?? 0,
@@ -63,7 +67,7 @@ class Doctor {
         category: map['category'] ?? '',
         hospitalName: map['hospitalName'] ?? '',
         location: map['location'] ?? '',
-        isAccepted: map['isAccepted'] ?? false,
+        isAccepted: map['isAccepted'] ?? false, 
         docId: map['docId'],
         consultationFee: map['consultationFee']??'',
         yearsOfExperience: map['yearsOfExperience'] ?? '',

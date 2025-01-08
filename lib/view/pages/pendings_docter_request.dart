@@ -16,7 +16,8 @@ class _PendingDoctorRequestsState extends State<PendingDoctorRequests> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration.zero, () => doctorController.fetchDocterPendingRequest());
+    Future.delayed(
+        Duration.zero, () => doctorController.fetchDocterPendingRequest());
   }
 
   @override
@@ -25,7 +26,7 @@ class _PendingDoctorRequestsState extends State<PendingDoctorRequests> {
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
         title: const Text(
-          'Doctor pending requst',     
+          'Doctor pending requst',
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
         ),
         centerTitle: true,
@@ -39,7 +40,8 @@ class _PendingDoctorRequestsState extends State<PendingDoctorRequests> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.nature_people_outlined, size: 64, color: Colors.grey[400]),
+                Icon(Icons.nature_people_outlined,
+                    size: 64, color: Colors.grey[400]),
                 const SizedBox(height: 16),
                 Text(
                   'No pending applications',
@@ -58,6 +60,4 @@ class _PendingDoctorRequestsState extends State<PendingDoctorRequests> {
       }),
     );
   }
-
- 
 }
