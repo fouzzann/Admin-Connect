@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:cc_admin_side/controller/docter_controller.dart';
 import 'package:cc_admin_side/widgets/dr_pending_request/accept_and_decline.dart';
 import 'package:cc_admin_side/widgets/dr_pending_request/doctor_image.dart';
